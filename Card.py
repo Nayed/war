@@ -4,14 +4,21 @@ class Card:
 
     def __init__(self, val, col):
         if val < 2 or val > 14:
-            print("Error: \nValue must be between 2 and 14")
+            print("Error: \n\tValue must be between 2 and 14")
             exit(1)
         if col < 0 or col > 3:
-            print("Error: \nCode color must be between 0 and 3")
+            print("Error: \n\tCode color must be between 0 and 3")
             exit(1)
-
         self.value = val
         self.color = col
 
-    def display(self):
-        print(Card.values[self.value], "of", Card.colors[self.color])
+    def __str__(self):
+        return str(Card.values[self.value]) + " of " + Card.colors[self.color]
+
+    def display_ascii(self):
+        name = str(Card.values[self.value]) + " of " + Card.colors[self.color]
+        size = len(name) + 2
+        print("/", "-" * size, "\\", sep="")
+        print("|", name, "|")
+        print("|", "-" * size, "|", sep="")
+        print("\\", "-" * size, "/", sep="")
