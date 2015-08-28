@@ -1,4 +1,5 @@
 from Card import Card
+import random
 
 class Deck:
     def __init__(self):
@@ -16,3 +17,14 @@ class Deck:
             else:
                 game_cards += ", " + str(card)
         return game_cards
+
+    def shuffle(self):
+        random.shuffle(self.cards)
+
+    def pull(self):
+        try:
+            return self.cards.pop(0)
+        except IndexError as error:
+            print("There is no card left!")
+            return None
+            
