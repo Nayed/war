@@ -3,7 +3,7 @@ from CardGame import CardGame
 class Deck(CardGame):
 
     def __init__(self):
-        super().__init__(True)
+        super().__init__()
 
     def add(self, card):
         self.cards.append(card)

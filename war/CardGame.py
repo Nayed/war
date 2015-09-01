@@ -13,12 +13,11 @@ class CardGame:
     cards = property(__getCards, __setCards)
 
     def __init__(self, empty = False):
-        self.__cards = []
-
-        if not empty:
-            for val in range(2, 15):
-                for col in range(4):
-                    self.__cards.append(Card(val, col))
+        if self.__class__ is CardGame:
+            raise Exception("Creation forbidden")
+        else:
+            self.__cards = []
+            self.initialize()
 
     def __str__(self):
         game_cards = ""
@@ -38,4 +37,6 @@ class CardGame:
         except IndexError as error:
             print("There is no card left!")
             return None
-            
+    
+    def initialize(self):
+        pass
