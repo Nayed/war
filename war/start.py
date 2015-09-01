@@ -1,9 +1,9 @@
-from DeckPlayer import DeckPlayer
+from Deck import Deck
 from Card import Card
 
 if __name__ == '__main__':
     c = Card(12, 2)
-    deck_player = DeckPlayer()
-    deck_player + c 
-    print(deck_player)
+    deck = Deck()
+    deck + c 
+    print(deck)
     
