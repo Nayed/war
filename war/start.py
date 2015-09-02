@@ -1,8 +1,8 @@
 from Deck import Deck
-from Card import Card
+from ClassicCard import ClassicCard
 
 if __name__ == '__main__':
-    c = Card(12, 2)
+    c = ClassicCard(12, 2)
     deck = Deck()
     deck + c 
     print(deck)

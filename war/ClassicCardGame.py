@@ -1,5 +1,5 @@
 from CardGame import CardGame
-from Card import Card
+from ClassicCard import ClassicCard
 
 class ClassicCardGame(CardGame):
     def __init__(self):
@@ -8,5 +8,5 @@ class ClassicCardGame(CardGame):
     def initialize(self):
         for val in range(2, 15):
             for col in range(4):
-                self.cards.append(Card(val, col))
+                self.cards.append(ClassicCard(val, col))
         
