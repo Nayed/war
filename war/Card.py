@@ -22,7 +22,7 @@ class Card:
     def __init__(self, val, col):
         if self.__class__ is Card:
             raise Exception("Creation forbidden!")
-        self.validation(val, col)
+        self.__class__.validation(val, col)
         self.__value = val
         self.__color = col
 
@@ -37,5 +37,6 @@ class Card:
         print("|", "-" * size, "|", sep="")
         print("\\", "-" * size, "/", sep="")
 
-    def validation(self, val, col):
+    @staticmethod
+    def validation(val, col):
         pass

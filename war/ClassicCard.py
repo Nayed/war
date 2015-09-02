@@ -7,11 +7,11 @@ class ClassicCard(Card):
         Card.colors = ("Heart", "Diamonds", "Clubs", "Spades")
         super().__init__(val, col)
 
-    def validation(self, val, col):
+    @staticmethod
+    def validation(val, col):
         if val < 2 or val > 14:
-            print("Error: \n\tValue must be between 2 and 14")
+            print("Error:\tValue must be between 2 and 14")
             exit(1)
         if col < 0 or col > 3:
-            print("Error: \n\tCode color must be between 0 and 3")
+            print("Error:\tCode color must be between 0 and 3")
             exit(1)
-            
